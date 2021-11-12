@@ -1,0 +1,4 @@
+for( i=0;i<200;i++):
+	for(j=0;j<200;j++):
+		-jeżeli j>i tab[i][j]=1
+		- jeżeli nie tab[i][j]=0

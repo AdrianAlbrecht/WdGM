@@ -1,0 +1,5 @@
+for( i=0;i<200;i++):
+	for(j=0;j<200;j++):
+		-jeżeli i<20 lub i>=180 to tab[i][j]=0
+		-jeżeli nie to jeżeli j<20 lub j>=180 to tab[i][j]=0
+		-jeżeli nie to tab[i][j]=1

@@ -1,0 +1,11 @@
+Zadanie:
+
+	Obraz posiadający ramkę o grubości 5 pikseli w kolorze czarnym oraz pionowe czarne linie grubości 1 piksel licząc 1 piksel od ramki. Reszta pikseli biała.
+
+Pseudokod:
+for( i=0;i<200;i++):
+	for(j=0;j<200;j++):
+		- jeżeli i<5 lub i>=195 to tab[i][j]=0
+		- jeżeli nie to jeżeli j<5 lub j>=195 to tab[i][j]=0
+		- jeżeli nie to jeżeli i modulo 2 równe 0 to tab[i][j]=0
+		- jeżeli nie to tab[i][j]=1
