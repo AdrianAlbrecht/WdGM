@@ -19,12 +19,12 @@ def konwertuj_na_szary(obraz, w1, w2, w3):
 w1, w2, w3 = 0.2989, 0.5870, 0.1140
 obraz1 = obraz.copy()
 konwertuj_na_szary(obraz1, w1, w2, w3)
-#obraz1.show()
+obraz1.show()
 obraz1.save(path+'obraz1.jpg')
 
 #Zadanie 1.3
 R,G,B = obraz1.split()
-#R.show()
+R.show()
 print(R.mode)
 
 #Zadanie 2.1
@@ -49,7 +49,7 @@ def utnij_wartości_pikseli(obraz, wsp_min, wsp_max):
 #Zadanie 3.2
 obraz2 = obraz.copy()
 obraz2 = utnij_wartości_pikseli(obraz2,50,190)
-#obraz2.show()
+obraz2.show()
 obraz2.save(path+'obraz2.jpg')
 
 #Zadanie 3.3
@@ -59,7 +59,7 @@ def utnij_wartości_pikseli2(obraz, wsp_min, wsp_max):
 #Zadanie 3.4
 obraz3 = obraz.copy()
 obraz3 = utnij_wartości_pikseli2(obraz3, 50, 190)
-#obraz3.show()
+obraz3.show()
 obraz3.save(path+'obraz3.jpg')
 
 #Zadanie 4.1
@@ -74,7 +74,7 @@ def rysuj_prostokat(obraz, m, n, a, b, kolor):
 #Zadanie 4.2
 obraz4 = obraz.copy()
 rysuj_prostokat(obraz4, 25, 25, 25, 25, (250,250,250))
-#obraz4.show()
+obraz4.show()
 obraz4.save(path+'obraz4.jpg')
 
 #Zadanie 4.3
@@ -89,7 +89,7 @@ def rysuj_kwadrat(obraz, m, n, a, kolor):
 #Zadanie 4.4
 obraz5 = obraz.copy()
 rysuj_kwadrat(obraz5, 25,25,25, (250,250,250))
-#obraz5.show()
+obraz5.show()
 obraz5.save(path+'obraz5.jpg')
 
 #Zadanie 5.1
@@ -105,7 +105,7 @@ def odbij_w_poziomie(obraz):
 
 #Zadanie 5.2
 obraz6 = odbij_w_poziomie(obraz)
-#obraz6.show()
+obraz6.show()
 obraz6.save(path+'obraz6.jpg')
 
 #Zadanie 5.3
@@ -114,7 +114,7 @@ def odbij_w_pionie(obraz):
 
 #Zadanie 5.4
 obraz7 = odbij_w_pionie(obraz)
-#obraz7.show()
+obraz7.show()
 obraz7.save(path+'obraz7.jpg')
 
 #Zadanie 5.5
@@ -135,7 +135,7 @@ def odbij_w_poziomie_przez_środek(obraz):
 
 #Zadanie 5.6
 obraz8 = odbij_w_poziomie_przez_środek(obraz)
-#obraz8.show()
+obraz8.show()
 obraz8.save(path+'obraz8.jpg')
 
 #Zadanie 5.7
@@ -157,14 +157,14 @@ def odbij_w_pionie_przez_środek(obraz):
 
 #Zadanie 5.8
 obraz9 = odbij_w_pionie_przez_środek(obraz)
-#obraz9.show()
+obraz9.show()
 obraz9.save(path+'obraz9.jpg')
 
 #Zadanie 6
-# T = np.array(obraz, dtype='uint8')
-# T += 100
-# obraz_wynik = Image.fromarray(T, "RGB")
-# obraz_wynik.show()
+    # T = np.array(obraz, dtype='uint8')
+    # T += 100
+    # obraz_wynik = Image.fromarray(T, "RGB")
+    # obraz_wynik.show()
 T = np.array(obraz, dtype='uint8')
 
 for i in range(obraz.height):
