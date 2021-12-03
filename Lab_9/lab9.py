@@ -97,10 +97,9 @@ im_equalized1.save(path+"equalized1.jpg")
 ImageChops.difference(im_eq, im_equalized1).show() #obrazy są identyczne
 
 # Zadanie 7.2
-fig, axs = plt.subplots(2)
-fig.suptitle('Histograms difference')
-axs[0].plot(im_eq.histogram())
-axs[1].plot(im_equalized1.histogram())
+plt.title("histogram - porównanie ")
+plt.bar(range(256), im_eq.histogram(), color='r', alpha=0.5)
+plt.bar(range(256), im_equalized1.histogram(), color='b', alpha=0.5)
 plt.savefig(path+"porownanie.jpg")
 plt.show()
 
