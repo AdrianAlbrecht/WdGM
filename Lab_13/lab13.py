@@ -199,11 +199,11 @@ def wypisz_kolory():
         else:
             print(n, hex, hex_to_rgb(hex))
 
-print(ImageColor.colormap.items())
-wypisz_kolory()
+# print(ImageColor.colormap.items())
+# wypisz_kolory()
 
 #jeden kolor
-print("----------TOMATO COLOR:-----------")
+print("----------COLORS:-----------")
 print("darkmagenta:", ImageColor.colormap['darkmagenta'], hex_to_rgb(
     ImageColor.colormap['darkmagenta']))
 print("deepskyblue:", ImageColor.colormap['deepskyblue'], hex_to_rgb(
