@@ -31,49 +31,35 @@ path = "kolos_2/obrazy do kolokwium 2-20220117/"
     
 # # Zadanie 2
 
-# # Zadanie 3
-# # my_image = Image.open(path+"obraz3.jpg")
-# # zdjecie_przefiltrowane = Image.open(path+"filtered5.jpg")
-# # my_image.show()
-# # zdjecie_przefiltrowane.show()
+# Zadanie 3
+my_image = Image.open(path+"obraz3.jpg")
+zdjecie_przefiltrowane = Image.open(path+"filtered5.jpg")
+#my_image.show()
+#zdjecie_przefiltrowane.show()
 
-# # image1 = my_image.filter(ImageFilter.BLUR)
-# # image2 = my_image.filter(ImageFilter.DETAIL)
-# # image3 = my_image.filter(ImageFilter.EDGE_ENHANCE)
-# # image4 = my_image.filter(ImageFilter.EDGE_ENHANCE_MORE)
-# # image5 = my_image.filter(ImageFilter.FIND_EDGES)
-# # image6 = my_image.filter(ImageFilter.SHARPEN)
-# # image7 = my_image.filter(ImageFilter.SMOOTH)
-# # image8 = my_image.filter(ImageFilter.SMOOTH_MORE)
-# # image9 = my_image.filter(ImageFilter.CONTOUR)
-# # image10 = my_image.filter(ImageFilter.EMBOSS)
-# # image11 = my_image.filter(ImageFilter.BoxBlur(1))
-# # image12 = my_image.filter(ImageFilter.GaussianBlur)
-# # image13 = my_image.filter(ImageFilter.UnsharpMask)
-# # image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(0, -1, 0, -1, 10, -1, 0, -1, 0), scale=6, offset=0))
-# # image15 = my_image.filter(ImageFilter.RankFilter(3, 0))
-# # image16 = my_image.filter(ImageFilter.MedianFilter)
-# # image17 = my_image.filter(ImageFilter.MinFilter)
-# # image18 = my_image.filter(ImageFilter.MaxFilter)
-# # ImageFilter.EMBOSS.filterargs = (
-# #     (3, 3), 1, 128, (-1, 0, 1, -2, 0, 2, -1, 0, 1))
-# # image19 = my_image.filter(ImageFilter.EMBOSS)
-# # ImageFilter.EMBOSS.filterargs = (
-# #     (3, 3), 1, 128, (-1, -2, -1, 0, 0, 0, 1, 2, 1))
-# # image20 = my_image.filter(ImageFilter.EMBOSS)
+image2 = my_image.filter(ImageFilter.DETAIL)
+image3 = my_image.filter(ImageFilter.EDGE_ENHANCE)
+image6 = my_image.filter(ImageFilter.SHARPEN)
+image9 = my_image.filter(ImageFilter.CONTOUR)
 
-# # all_images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11,
-# #               image12, image13, image14, image15, image16, image17, image18, image19, image20]
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(0, -1, 0, -1, 10, -1, 0, -1, 0), scale=6, offset=0))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 8, -1, -1, -1, -1), scale=1, offset=255))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-2, -2, -2, -2, 32, -2, -2, -2, -2), scale=16, offset=0))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 10, -1, -1, -1, -1), scale=2, offset=0))
 
-# # filter_names = ["Blur", "Detail", "Edge Enhance", "Edge Enhance More", "Find Edges", "Sharpen", "Smooth", "Smooth More", "Emboss", "Box Blur",
-# #                 "Gaussian Blur", "Unsharpen Mask", "Kernel", "Rank Filter", "Median Filter", "MinFilter", "Max Filter", "Sobel1", "Sobel2"]
+ImageFilter.EMBOSS.filterargs = (
+    (3, 3), 1, 128, (-1, 0, 1, -2, 0, 2, -1, 0, 1))
+image19 = my_image.filter(ImageFilter.EMBOSS)
+ImageFilter.EMBOSS.filterargs = (
+    (3, 3), 1, 128, (-1, -2, -1, 0, 0, 0, 1, 2, 1))
+image20 = my_image.filter(ImageFilter.EMBOSS)
+
+all_images = [image2, image3, image6, image9, image14, image19, image20]
 
 
-# # for i in range(len(all_images)):
-# #    image_diff = ImageChops.difference(
-# #        zdjecie_przefiltrowane, all_images[i]).getdata()
-# #    if all(pixel == (0, 0, 0, 0) for pixel in list(image_diff)):
-# #        print(f'Your filtered image is identical to filter {filter_names[i]}')
+for im in all_images:
+    #im.show()
+    ImageChops.difference(zdjecie_przefiltrowane, im).show()
 
 # # Zadanie 4
 # # img = Image.new("RGB", (400, 240), "#ffffff")
@@ -190,18 +176,53 @@ path = "kolos_2/obrazy do kolokwium 2-20220117/"
 # roznica.show()
 
 # Zadanie 8
-im = Image.open(path+"WD3.jpg")
-image_split = Image.Image.split(im)
-b = image_split[1]
+# im = Image.open(path+"WD3.jpg")
+# image_split = Image.Image.split(im)
+# b = image_split[1]
 
 
-def statystyki(im):
-   s = stat.Stat(im)
-   print("max i min ", s.extrema)  # max i min
-   print("zlicza ", s.count)  # zlicza
-   print("srednia ", s.mean)  # srednia
-   print("mediana ", s.median)  # mediana
-   print("odchylenie standardowe ", s.stddev)  # odchylenie standardowe
+# def statystyki(im):
+#    s = stat.Stat(im)
+#    print("max i min ", s.extrema)  # max i min
+#    print("zlicza ", s.count)  # zlicza
+#    print("srednia ", s.mean)  # srednia
+#    print("mediana ", s.median)  # mediana
+#    print("odchylenie standardowe ", s.stddev)  # odchylenie standardowe
 
 
-statystyki(b)
+# statystyki(b)
+
+# #Zadanie 9
+# imagezad5 = Image.open(path+"broken-leg4.jpg")
+
+# obraz_L = imagezad5.convert("L")
+# #
+# # hist = obraz_L.histogram()
+# #
+# # plt.title("histogram - zeby.jpg ") # tytuł
+# # plt.plot(hist)
+# # plt.show()
+
+# def histogram_norm(obraz):
+#     obraz = obraz.convert('L')
+#     hist = obraz.histogram()
+#     w, h = obraz.size
+#     tablica = []
+#     for i in hist:
+#         tablica.append(i / (w * h))
+
+#     return tablica
+
+
+# def histogram_cumul(obraz):
+#     tablica = histogram_norm(obraz)
+#     cumulus = []
+#     for i in range(len(tablica)):
+#         cumulus.append(sum(tablica[:i]))
+#     return cumulus
+
+# tablica_cumulus = histogram_cumul(obraz_L)
+# plt.title("histogram - skumulowany")
+# plt.plot(range(256), tablica_cumulus)
+# # plt.savefig('kumul.jpg')
+# plt.show()
