@@ -36,34 +36,35 @@ path = "kolos_2/obrazy do kolokwium 2-20220117/"
 #im2.paste(maska, (0, 0), im2)
 
 # Zadanie 3
-# my_image = Image.open(path+"obraz3.jpg")
-# zdjecie_przefiltrowane = Image.open(path+"filtered5.jpg")
-# #my_image.show()
-# #zdjecie_przefiltrowane.show()
+my_image = Image.open(path+"obraz3.jpg")
+zdjecie_przefiltrowane = Image.open(path+"filtered5.jpg")
+#my_image.show()
+#zdjecie_przefiltrowane.show()
 
-# image2 = my_image.filter(ImageFilter.DETAIL)
-# image3 = my_image.filter(ImageFilter.EDGE_ENHANCE)
-# image6 = my_image.filter(ImageFilter.SHARPEN)
-# image9 = my_image.filter(ImageFilter.CONTOUR)
+image2 = my_image.filter(ImageFilter.DETAIL)
+image3 = my_image.filter(ImageFilter.EDGE_ENHANCE)
+image6 = my_image.filter(ImageFilter.SHARPEN)
+image9 = my_image.filter(ImageFilter.CONTOUR)
 
-# image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(0, -1, 0, -1, 10, -1, 0, -1, 0), scale=6, offset=0))
-# image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 8, -1, -1, -1, -1), scale=1, offset=255))
-# image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-2, -2, -2, -2, 32, -2, -2, -2, -2), scale=16, offset=0))
-# image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 10, -1, -1, -1, -1), scale=2, offset=0))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(0, -1, 0, -1, 10, -1, 0, -1, 0), scale=6, offset=0))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 8, -1, -1, -1, -1), scale=1, offset=255))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-2, -2, -2, -2, 32, -2, -2, -2, -2), scale=16, offset=0))
+image14 = my_image.filter(ImageFilter.Kernel(size=(3, 3), kernel=(-1, -1, -1, -1, 10, -1, -1, -1, -1), scale=2, offset=0))
 
-# ImageFilter.EMBOSS.filterargs = (
-#     (3, 3), 1, 128, (-1, 0, 1, -2, 0, 2, -1, 0, 1))
-# image19 = my_image.filter(ImageFilter.EMBOSS)
-# ImageFilter.EMBOSS.filterargs = (
-#     (3, 3), 1, 128, (-1, -2, -1, 0, 0, 0, 1, 2, 1))
-# image20 = my_image.filter(ImageFilter.EMBOSS)
+ImageFilter.EMBOSS.filterargs = (
+    (3, 3), 1, 128, (-1, 0, 1, -2, 0, 2, -1, 0, 1))
+image19 = my_image.filter(ImageFilter.EMBOSS)
+ImageFilter.EMBOSS.filterargs = (
+    (3, 3), 1, 128, (-1, -2, -1, 0, 0, 0, 1, 2, 1))
+image20 = my_image.filter(ImageFilter.EMBOSS)
 
-# all_images = [image2, image3, image6, image9, image14, image19, image20]
+all_images = [image2, image3, image6, image9, image14, image19, image20]
 
 
-# for im in all_images:
-#     #im.show()
-#     ImageChops.difference(zdjecie_przefiltrowane, im).show()
+for im in all_images:
+    im.save(path+"../im.jpg")
+    im = Image.open(path+"../im.jpg")
+    ImageChops.difference(zdjecie_przefiltrowane, im).show()
 
 # # Zadanie 4
 # # img = Image.new("RGB", (400, 240), "#ffffff")
